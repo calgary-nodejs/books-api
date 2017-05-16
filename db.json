@@ -10,7 +10,7 @@
 }, {
   "id": "953b39db-818a-4b6e-ae1a-cbd8821be081",
   "title": "The Hidden Life of Trees",
-  "author": [ "Peter Wohlleben", "Tim Flannery" ],
+  "authors": [ "Peter Wohlleben", "Tim Flannery" ],
   "publisher": "Greystone Books",
   "datePublished": "2016-09-13T03:00:00.000Z",
   "ISBN": "978-1771642484",
@@ -19,7 +19,7 @@
 }, {
   "id": "67366589-6e37-491a-a4b6-89e2c53382c0",
   "title": "The Handmaid's Tale",
-  "author": [ "Margaret Atwood" ],
+  "authors": [ "Margaret Atwood" ],
   "publisher": "Emblem Editions",
   "datePublished": "2011-09-06T11:00:00.000Z",
   "ISBN": "978-0771008795",
@@ -28,7 +28,7 @@
 }, {
   "id": "cb29af77-e753-4466-b51a-0eca4af28bd3",
   "title": "How to Win Friends and Influence People",
-  "author": [ "Dale Carnegie" ],
+  "authors": [ "Dale Carnegie" ],
   "publisher": "Gallery Books",
   "datePublished": "1998-10-01T00:00:00.000Z",
   "ISBN": "978-0671027032",
@@ -37,7 +37,7 @@
 }, {
   "id": "20f512cd-199d-4d0d-a815-bd5c20d1733b",
   "title": "Option B: Facing Adversity, Building Resilience, and Finding Joy",
-  "author": [ "Sheryl Sandberg", "Adam Grant" ],
+  "authors": [ "Sheryl Sandberg", "Adam Grant" ],
   "publisher": "Knopf",
   "datePublished": "2017-04-24T00:00:00.000Z",
   "ISBN": "978-1524732684",
@@ -46,7 +46,7 @@
 }, {
   "id": "98e57211-f033-4b6f-bd75-2c0ddd85a69f",
   "title": "Fat for Fuel: A Revolutionary Diet to Combat Cancer, Boost Brain Power, and Increase Your Energy",
-  "author": [ "Joseph Mercola" ],
+  "authors": [ "Joseph Mercola" ],
   "publisher": "Hay House, Inc.",
   "datePublished": "2017-05-16T00:00:00.000Z",
   "ISBN": "978-1401953775",
@@ -55,7 +55,7 @@
 }, {
   "id": "ab27e316-9242-4ee9-8757-65a24ea3544d",
   "title": "You Are a Badass: How to Stop Doubting Your Greatness and Start Living an Awesome Life",
-  "author": [ "Jen Sincero" ],
+  "authors": [ "Jen Sincero" ],
   "publisher": "Running Press",
   "datePublished": "2013-04-23T00:00:00.000Z",
   "ISBN": "978-0762447695",
@@ -64,7 +64,7 @@
 }, {
   "id": "a16f00b6-f533-4d3f-b283-55ab93c0a358",
   "title": "The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life",
-  "author": [ "Mark Manson" ],
+  "authors": [ "Mark Manson" ],
   "publisher": "HarperOne",
   "datePublished": "2016-09-13T00:00:00.000Z",
   "ISBN": "978-0062641540",
@@ -73,7 +73,7 @@
 }, {
   "id": "199eb8f3-dbab-4ce7-aeef-f36426e9eed8",
   "title": "Milk and Honey",
-  "author": [ "Rupi Kaur" ],
+  "authors": [ "Rupi Kaur" ],
   "publisher": "Andrews McMeel Publishing",
   "datePublished": "2015-10-06T00:00:00.000Z",
   "ISBN": "978-1449474256",
@@ -82,7 +82,7 @@
 }, {
   "id": "2af646be-9d9a-4f3d-af8c-04a816699e4a",
   "title": "Do I Make Myself Clear?: Why Writing Well Matters",
-  "author": [ "Harold Evans" ],
+  "authors": [ "Harold Evans" ],
   "publisher": "Little, Brown and Company",
   "datePublished": "2017-05-16T00:00:00.000Z",
   "ISBN": "978-0316277174",
@@ -91,7 +91,7 @@
 }, {
   "id": "0eda61e5-0b28-485d-817d-3e5276f78f1a",
   "title": "The Life-Changing Magic of Tidying Up: The Japanese Art of Decluttering and Organizing",
-  "author": [ "Marie Kondo" ],
+  "authors": [ "Marie Kondo" ],
   "publisher": "Ten Speed Press",
   "datePublished": "2014-10-14T00:00:00.000Z",
   "ISBN": "978-1607747307",
@@ -100,7 +100,7 @@
 }, {
   "id": "eb88fdfc-2ca2-455c-8050-9046d3162ac8",
   "title": "Player's Handbook",
-  "author": [ "Wizards RPG Team" ],
+  "authors": [ "Wizards RPG Team" ],
   "publisher": "Wizards of the Coast",
   "datePublished": "2014-08-19T00:00:00.000Z",
   "ISBN": "978-0786965601",
@@ -109,7 +109,7 @@
 }, {
   "id": "b0065cfe-c06e-4cba-9ca3-1f814b9eef95",
   "title": "The 7 Habits of Highly Effective People: Powerful Lessons in Personal Change",
-  "author": [ "Stephen R. Covey" ],
+  "authors": [ "Stephen R. Covey" ],
   "publisher": "Simon & Schuster",
   "datePublished": "2013-11-19T00:00:00.000Z",
   "ISBN": "978-1451639612",
@@ -118,7 +118,7 @@
 }, {
   "id": "f78d88f5-ad82-44a9-b894-3ac4cc5fa3ad",
   "title": "Love You Forever",
-  "author": [ "Robert Munsch", "Sheila McGraw" ],
+  "authors": [ "Robert Munsch", "Sheila McGraw" ],
   "publisher": "Firefly Books",
   "datePublished": "1995-09-01T00:00:00.000Z",
   "ISBN": "978-0920668375",
@@ -127,7 +127,7 @@
 }, {
   "id": "2caa012e-2ebe-40f0-9dc4-86957769d9e4",
   "title": "Confessions of a Domestic Failure: A Humorous Book About a not so Perfect Mom",
-  "author": [ "Bunmi Laditan" ],
+  "authors": [ "Bunmi Laditan" ],
   "publisher": "MIRA",
   "datePublished": "2017-05-02T00:00:00.000Z",
   "ISBN": "978-0778330684",
@@ -136,7 +136,7 @@
 }, {
   "id": "4c39a77e-d75d-49a6-af90-03fc44cfce44",
   "title": "When Breath Becomes Air",
-  "author": [ "Paul Kalanithi", "Abraham Verghese" ],
+  "authors": [ "Paul Kalanithi", "Abraham Verghese" ],
   "publisher": "Random House",
   "datePublished": "2016-01-12T00:00:00.000Z",
   "ISBN": "978-0812988406",
@@ -145,7 +145,7 @@
 }, {
   "id": "b458db41-6d09-41f3-8ea9-bfaed6e01545",
   "title": "Thinking, Fast and Slow",
-  "author": [ "Daniel Kahneman" ],
+  "authors": [ "Daniel Kahneman" ],
   "publisher": "Anchor Canada",
   "datePublished": "2013-04-02T00:00:00.000Z",
   "ISBN": "978-0385676533",
@@ -154,7 +154,7 @@
 }, {
   "id": "41cb6d8c-6a4a-4809-b099-479786e61088",
   "title": "The Plant Paradox: The Hidden Dangers in 'Healthy' Foods That Cause Disease and Weight Gain",
-  "author": [ "Steven R., M.D. Gundry" ],
+  "authors": [ "Steven R., M.D. Gundry" ],
   "publisher": "Harper Wave",
   "datePublished": "2017-04-25T00:00:00.000Z",
   "ISBN": "978-0062427137",
@@ -163,7 +163,7 @@
 }, {
   "id": "f149ef96-7b81-4667-965a-53967574cecb",
   "title": "The Trials of Apollo Book Two The Dark Prophecy",
-  "author": [ "Rick Riordan" ],
+  "authors": [ "Rick Riordan" ],
   "publisher": "Disney-Hyperion",
   "datePublished": "2017-05-02T00:00:00.000Z",
   "ISBN": "978-1484746424",
@@ -172,7 +172,7 @@
 }, {
   "id": "c6bafdc5-1c73-4c31-9230-5ae837bc3a35",
   "title": "Nineteen Eighty Four",
-  "author": [ "George Orwell" ],
+  "authors": [ "George Orwell" ],
   "publisher": "Penguin UK",
   "datePublished": "2008-07-29T00:00:00.000Z",
   "ISBN": "978-0141036144",
@@ -181,7 +181,7 @@
 }, {
   "id": "95b29c6e-366a-42c3-b79e-c6694986a13b",
   "title": "Sapiens: A Brief History of Humankind",
-  "author": [ "Yuval Noah Harari" ],
+  "authors": [ "Yuval Noah Harari" ],
   "publisher": "Signal",
   "datePublished": "2016-05-10T00:00:00.000Z",
   "ISBN": "978-0771038518",
@@ -190,7 +190,7 @@
 }, {
   "id": "46091d99-c1e3-426d-a24b-569b0770d014",
   "title": "Start with Why: How Great Leaders Inspire Everyone to Take Action",
-  "author": [ "Simon Sinek" ],
+  "authors": [ "Simon Sinek" ],
   "publisher": "Portfolio",
   "datePublished": "2011-12-27T00:00:00.000Z",
   "ISBN": "978-1591846444",
@@ -199,7 +199,7 @@
 }, {
   "id": "9c41baa1-24e8-4fe8-a760-d0ab19eb2067",
   "title": "Tools of Titans: The Tactics, Routines, and Habits of Billionaires, Icons, and World-Class Performers",
-  "author": [ "Timothy Ferriss", "Arnold Schwarzenegger" ],
+  "authors": [ "Timothy Ferriss", "Arnold Schwarzenegger" ],
   "publisher": "Houghton Mifflin Harcourt",
   "datePublished": "2016-12-06T00:00:00.000Z",
   "ISBN": "978-1328683786",
@@ -208,7 +208,7 @@
 }, {
   "id": "d534a9a0-3640-4dae-b405-25fa4584eac4",
   "title": "Twice as Far: The True Story of SwissAir Flight 111 Airplane Crash Investigation",
-  "author": [ "Thomas C. Juby", "RJ Parker Publishing", "Aeternum Designs" ],
+  "authors": [ "Thomas C. Juby", "RJ Parker Publishing", "Aeternum Designs" ],
   "publisher": "CreateSpace Independent Publishing Platform",
   "datePublished": "2017-01-25T00:00:00.000Z",
   "ISBN": "978-1540879592",
@@ -217,7 +217,7 @@
 }, {
   "id": "bbdd30ce-64cc-4407-9e15-33583d9662c0",
   "title": "No Middle Name: The Complete Collected Jack Reacher Short Stories",
-  "author": [ "Lee Child" ],
+  "authors": [ "Lee Child" ],
   "publisher": "Delacorte Press",
   "datePublished": "2016-05-16T00:00:00.000Z",
   "ISBN": "978-0399593574",
@@ -226,7 +226,7 @@
 }, {
   "id": "aee55554-d9d1-4340-806e-3fd5f88e4d10",
   "title": "A Guide to the Project Management Body of Knowledge",
-  "author": [ "Project Management Institute" ],
+  "authors": [ "Project Management Institute" ],
   "publisher": "Project Management Institute",
   "datePublished": "2013-01-01T00:00:00.000Z",
   "ISBN": "978-1935589679",
@@ -235,7 +235,7 @@
 }, {
   "id": "2f24dc2b-206f-48ad-9ae9-2d30b6013d60",
   "title": "Tales From the Yawning Portal",
-  "author": [ "Wizards RPG Team" ],
+  "authors": [ "Wizards RPG Team" ],
   "publisher": "Wizards of the Coast",
   "datePublished": "2017-04-04T00:00:00.000Z",
   "ISBN": "978-0786966097",
@@ -244,7 +244,7 @@
 }, {
   "id": "e98ec01c-d246-4cb0-8eb4-02cbe3c385f1",
   "title": "The Four Agreements: A Practical Guide to Personal Freedom",
-  "author": [ "Don Miguel Ruiz" ],
+  "authors": [ "Don Miguel Ruiz" ],
   "publisher": "Amber-Allen Publishing",
   "datePublished": "1997-11-01T00:00:00.000Z",
   "ISBN": "978-1878424310",
@@ -253,7 +253,7 @@
 }, {
   "id": "ec2a6cdd-fcf2-47ab-83d0-9857f45428b4",
   "title": "Voyager",
-  "author": [ "Diana Gabaldon" ],
+  "authors": [ "Diana Gabaldon" ],
   "publisher": "Seal Books",
   "datePublished": "2001-10-09T00:00:00.000Z",
   "ISBN": "978-0770428785",
@@ -262,7 +262,7 @@
 }, {
   "id": "2727871f-c3dc-4fe5-8cb8-fb671c44672d",
   "title": "Into the Water",
-  "author": [ "Paula Hawkins" ],
+  "authors": [ "Paula Hawkins" ],
   "publisher": "Doubleday Canada",
   "datePublished": "2017-05-02T00:00:00.000Z",
   "ISBN": "978-0385689632",
