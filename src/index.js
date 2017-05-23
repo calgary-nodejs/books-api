@@ -1,7 +1,8 @@
 'use strict'
 
 let express = require('express')
-let { getAuthors, getBooks, getBooksById } = require('./facades/book')
+let { getAuthors } = require('./facades/author')
+let { getBooks, getBooksById } = require('./facades/book')
 
 let app = express()
 
