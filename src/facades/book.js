@@ -2,6 +2,16 @@
 
 let books = require('../../db.json')
 
+function getAuthors () {
+  let result = new Set(
+    books
+      .map(book => book.authors)
+      .reduce((prev, curr) => prev.concat(curr))
+      .sort()
+    )
+  return [...result]
+}
+
 function getBooks (query) {
   let result = books
   if (query.category) {
@@ -29,5 +39,6 @@ function getBooksById (id) {
   return books.find(b => b.id === id)
 }
 
+exports.getAuthors = getAuthors
 exports.getBooks = getBooks
 exports.getBooksById = getBooksById

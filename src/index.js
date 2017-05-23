@@ -1,9 +1,13 @@
 'use strict'
 
 let express = require('express')
-let { getBooks, getBooksById } = require('./facades/book')
+let { getAuthors, getBooks, getBooksById } = require('./facades/book')
 
 let app = express()
+
+app.get('/authors', (req, res) => {
+  res.send(getAuthors())
+})
 
 app.get('/books', (req, res) => {
   res.send(getBooks(req.query))
