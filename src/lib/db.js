@@ -1,5 +1,9 @@
 'use strict'
 
 let levelup = require('levelup')
+let Promise = require('bluebird')
 
-module.exports = levelup('db', { valueEncoding: 'json' })
+let db = levelup('db', { valueEncoding: 'json' })
+Promise.promisifyAll(db)
+
+module.exports = db
