@@ -1,33 +1,39 @@
 'use strict'
 
-let books = require('../../db.json')
+let db = require('../lib/db')
 
-function getBooks (query) {
-  let result = books
+function getBooks (query, cb) {
+  let result = []
+  let dbQuery
   if (query.category) {
-    result = result.filter(hasCategory(query.category))
+    let key = 'category\x00' + query.category.toLowerCase()
+    dbQuery = { 'gte': key, 'lt': key + '\xff' }
   }
-  if (query.author) {
-    result = result.filter(hasAuthor(query.author))
+  db.createReadStream(dbQuery)
+    .on('data', data => {
+      result = result.concat(data.value)
+    })
+    .on('error', cb)
+    .on('end', () => dbQuery
+        ? getBooksByIds(result, cb)
+        : cb(null, result))
+}
+
+function getBooksByIds (ids, cb) {
+  if (!ids.length) {
+    return cb(null, [])
   }
-  return result
+  getBookById(ids[0], (err, book) => {
+    getBooksByIds(ids.slice(1), (err, books) => {
+      books.push(book)
+      cb(null, books)
+    })
+  })
 }
 
-function hasCategory (category) {
-  return book => book.categories
-    .map(c => c.toLowerCase())
-    .includes(category.toLowerCase())
-}
-
-function hasAuthor (author) {
-  return book => book.authors
-    .map(a => a.toLowerCase())
-    .some(a => a.indexOf(author.toLowerCase()) !== -1)
-}
-
-function getBooksById (id) {
-  return books.find(b => b.id === id)
+function getBookById (id, cb) {
+  db.get(id, cb)
 }
 
 exports.getBooks = getBooks
-exports.getBooksById = getBooksById
+exports.getBookById = getBookById

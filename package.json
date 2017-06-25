@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/calgary-nodejs/books-api#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "leveldown": "^1.7.2",
+    "levelup": "^1.3.8"
   }
 }
