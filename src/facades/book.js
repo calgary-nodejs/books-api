@@ -7,7 +7,7 @@ function getBooks (query) {
   return new Promise((resolve, reject) => {
     let result = []
     let dbQuery
-    if (query.category) {
+    if (query && query.category) {
       let key = 'category\x00' + query.category.toLowerCase()
       dbQuery = { 'gte': key, 'lt': key + '\xff' }
     }

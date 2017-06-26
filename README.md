@@ -39,3 +39,9 @@ Response 0 or more books:
   ...book json...
 }, ...]
 ```
+
+# Install
+npm install
+
+# Run
+npm start
