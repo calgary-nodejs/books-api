@@ -1,13 +1,28 @@
 'use strict'
 
-let { getBooks } = require('./book')
+let db = require('../lib/db')
+let Promise = require('bluebird')
 
-function getAuthors() {
-    return getBooks()
-            .filter(book => book.authors) //remove books without authors
-            .map(book => book.authors) //we only care about authors
-            .reduce((prev, curr) => prev.concat(curr)) //flatten list of lists
-            .then(authors => authors.sort()) //sort alaphabetically (by first name)
+/**
+ * Will return all authors.
+ * Accepts one url param: name
+ * Matching is case sensitive and uses a startswith comparison
+ * @param query
+ */
+function getAuthors(query) {
+    return new Promise((resolve, reject) => {
+        let result = []
+        let dbQuery
+        let key = 'author\x00' + (query && query.name ? query.name : '')
+        dbQuery = {'gte': key, 'lt': key + '\xff'}
+        db.createReadStream(dbQuery)
+            .on('data', data => {
+                result = result.concat(data.key.replace('author\x00', ''))
+            })
+            .on('error', reject)
+            .on('end', () => resolve(result))
+    })
 }
+
 
 exports.getAuthors = getAuthors
