@@ -11,6 +11,7 @@ function buildIndex (objects, property) {
     keys,
     map: objects.reduce((result, obj) => {
       obj[property].forEach(item => {
+        item = item.toLowerCase()
         keys.add(item)
         result[item] = result[item] || []
         result[item].push(obj.id)
