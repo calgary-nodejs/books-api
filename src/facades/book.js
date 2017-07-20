@@ -11,6 +11,10 @@ function getBooks (query) {
       let key = 'category\x00' + query.category.toLowerCase()
       dbQuery = { 'gte': key, 'lt': key + '\xff' }
     }
+    if (query && query.author) {
+      let key = 'author\x00' + query.author.toLowerCase()
+      dbQuery = { 'gte': key, 'lt': key + '\xff' }
+    }
     db.createReadStream(dbQuery)
       .on('data', data => {
         result = result.concat(data.value)
