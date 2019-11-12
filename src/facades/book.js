@@ -1,34 +1,30 @@
 'use strict'
 
-let db = require('../lib/db')
-let Promise = require('bluebird')
+const { buildQuery, db, getById } = require('../lib/db')
+const Promise = require('bluebird')
 
-function getBooks (query) {
+exports.getBookById = (id) => {
+  return getById('book', id)
+}
+
+exports.getBooks = (params) => {
   return new Promise((resolve, reject) => {
-    let result = []
+    const dbQueryAllBooks = buildQuery('book')
     let dbQuery
-    if (query && query.category) {
-      let key = 'category\x00' + query.category.toLowerCase()
-      dbQuery = { 'gte': key, 'lt': key + '\xff' }
+    if (params && params.category) {
+      dbQuery = buildQuery('category', params.category);
     }
-    if (query && query.author) {
-      let key = 'author\x00' + query.author.toLowerCase()
-      dbQuery = { 'gte': key, 'lt': key + '\xff' }
+    if (params && params.author) {
+      dbQuery = buildQuery('author', params.author)
     }
-    db.createReadStream(dbQuery)
+    let result = []
+    db.createValueStream(dbQuery || dbQueryAllBooks)
       .on('data', data => {
-        result = result.concat(data.value)
+        result = result.concat(data)
       })
       .on('error', reject)
       .on('end', () => resolve(dbQuery
-          ? Promise.all(result.map(getBookById))
+          ? Promise.all(result.map(exports.getBookById))
           : result))
   })
 }
-
-function getBookById (id) {
-  return db.getAsync(id)
-}
-
-exports.getBooks = getBooks
-exports.getBookById = getBookById

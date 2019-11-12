@@ -1,28 +1,17 @@
 'use strict'
 
-let db = require('../lib/db')
-let Promise = require('bluebird')
+const { getById } = require('../lib/db')
 
 /**
  * Will return all authors.
  * Accepts one url param: name
  * Matching is case sensitive and uses a startswith comparison
- * @param query
+ * @param params
  */
-function getAuthors(query) {
-    return new Promise((resolve, reject) => {
-        let result = []
-        let dbQuery
-        let key = 'author\x00' + (query && query.name ? query.name : '')
-        dbQuery = {'gte': key, 'lt': key + '\xff'}
-        db.createReadStream(dbQuery)
-            .on('data', data => {
-                result = result.concat(data.key.replace('author\x00', ''))
-            })
-            .on('error', reject)
-            .on('end', () => resolve(result))
-    })
+exports.getAuthors = (params) => {
+  const allAuthors = getById('authors')
+  if (params && params.name) {
+    return allAuthors.filter(author => author.includes(params.name))
+  }
+  return allAuthors
 }
-
-
-exports.getAuthors = getAuthors

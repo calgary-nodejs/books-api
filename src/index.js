@@ -1,9 +1,11 @@
 'use strict'
 
-let express = require('express')
-let loadDB = require('./lib/load_db')()
+const express = require('express')
+const { load } = require('./lib/load_db')
 
-let app = express()
+load()
+
+const app = express()
 
 app.use('/authors', require('./routes/authors'))
 app.use('/books', require('./routes/books'))
