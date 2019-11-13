@@ -1,7 +1,8 @@
 'use strict'
 
-let router = require('express').Router()
-let { getBooks, getBookById } = require('../facades/book')
+const router = require('express').Router()
+const authz = require('express-jwt-authz')
+const { getBooks, getBookById } = require('../facades/book')
 
 router.get('/', (req, res) => {
   getBooks(req.query)
@@ -14,5 +15,13 @@ router.get('/:bookId', (req, res) => {
     .then(book => res.send(book))
     .catch(err => res.status(404).send({ message: "Not Found" }))
 })
+
+router.delete(
+  '/:bookId',
+  authz([ 'delete:book' ]),
+  (req, res) => {
+    res.sendStatus(204)
+  }
+)
 
 module.exports = router

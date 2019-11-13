@@ -3,7 +3,8 @@
     "id": "92a64dc3-a856-4a1a-b7a5-7b0b58be90b7",
     "name": "John Admin",
     "email": "john@somemail.com",
-    "secret": "$2b$10$p3rmERHql17tTKCrnjDYQe.7Jbyl54GkUoXayet7l7PnKZ1LcirG6"
+    "secret": "$2b$10$p3rmERHql17tTKCrnjDYQe.7Jbyl54GkUoXayet7l7PnKZ1LcirG6",
+    "scope": "delete:book"
   }, {
     "id": "5639c709-4ae3-48e2-bbef-886fb12703fc",
     "name": "Jack Reader",
