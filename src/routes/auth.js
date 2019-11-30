@@ -82,7 +82,7 @@ const _generateAuthorizationForUser = async (user, includeToken = false) => {
 
   if (includeToken) {
     const token = putRefreshToken(user.id)
-    auth['refreshToken'] = token
+    auth['refresh_token'] = token
   }
   
   return auth
