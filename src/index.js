@@ -11,7 +11,7 @@ const app = express()
 app
   .use(bodyParser.json())
   .use('/auth', require('./routes/auth'))
-  .use(require('./routes/middleware/authentication'))
+  .use(require('./routes/middleware/authentication').authentication)
   .use('/authors', require('./routes/authors'))
   .use('/books', require('./routes/books'))
 
