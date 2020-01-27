@@ -28,3 +28,29 @@ exports.getBooks = (params) => {
           : result))
   })
 }
+
+exports.addBookUserView = (book, user) => {
+  const ts = new Date().toJSON()
+  return db.putAsync(
+    `bookUserView\x00${ts}`,
+    {
+      createdAt: ts,
+      userId: user.id,
+      categories: book.categories
+    }
+  )
+}
+
+exports.getBookUserViews = () => {
+  return new Promise((resolve, reject) => {
+    let result = []
+    db.createValueStream(buildQuery('bookUserView'))
+      .on('data', data => {
+        result = result.concat(data)
+      })
+      .on('error', reject)
+      .on('end', () => {
+        resolve(result)
+      })
+  })
+}

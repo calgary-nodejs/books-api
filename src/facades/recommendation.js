@@ -2,7 +2,9 @@
 
 const brain = require('brain.js')
 const {
+  addBookUserView,
   getBookById,
+  getBookUserViews,
   getBooks
 } = require('./book')
 
@@ -38,14 +40,65 @@ const takeTop = (results, limitTo) => {
     .slice(0, limitTo)
 }
 
-exports.getSimilarBooks = (book) => {
-  const input = rateBookCategories(book.categories)
-  const result = similarBooksNN.run(input)
-  delete result[book.id]
-  // console.log('Books similar to:', input)
-  // console.log('Books scored by similarity:', result)
+const loadTopBooks = (results, limitTo) => {
   return Promise.all(
-    takeTop(result, 3)
+    takeTop(results || [], limitTo)
       .map(({ id }) => getBookById(id))
   )
+}
+
+exports.getSimilarBooks = (book) => {
+  const input = rateBookCategories(book.categories)
+  const results = similarBooksNN.run(input)
+  delete results[book.id]
+  // console.log('Books similar to:', input)
+  // console.log('Books scored by similarity:', results)
+  return loadTopBooks(results, 3)
+}
+
+const booksInspiredByUserViewsNN = new brain.NeuralNetwork()
+
+const getAllBookCategories = () => {
+  return getBooks()
+    .then(books => books.reduce((categories, book) => ({
+      ...categories,
+      ...rateBookCategories(book.categories, 0),
+    }), {}))
+}
+
+const trainBooksInspiredByUserViewsNN = () => {
+  return Promise.all([
+    getAllBookCategories(),
+    getBookUserViews()
+  ]).then(([ allBookCategories, views ]) => {
+    if (!views.length) { return }
+    const dataSet =  views.map(view => ({
+      input: { [view.userId]: 1 },
+      output: {
+        ...allBookCategories,
+        ...rateBookCategories(view.categories),
+      },
+    }))
+    const trainingStats = booksInspiredByUserViewsNN.train(dataSet)
+    console.log('Books inpired by user views trained: ', trainingStats)
+  })
+}
+
+trainBooksInspiredByUserViewsNN()
+
+exports.updateBooksInspiredByUserViews = (book, user) => {
+  return addBookUserView(book, user)
+    .then(trainBooksInspiredByUserViewsNN)
+}
+
+exports.getBooksInspiredByUserViews = (user) => {
+  try {
+    const userInspiredCategories = booksInspiredByUserViewsNN.run({ [user.id]: 1 })
+    const results = similarBooksNN.run(userInspiredCategories || {})
+    // console.log('User inspired categories: ', userInspiredCategories)
+    // console.log('User inspired books: ', results)
+    return loadTopBooks(results, 5)
+  } catch (err) {
+    return Promise.reject(err)
+  }
 }
